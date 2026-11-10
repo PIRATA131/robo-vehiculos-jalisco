@@ -1,0 +1,23 @@
+# Descarga de CONAPO (~80 MB, la baja el cuaderno o scripts/descargar_conapo.py)
+# El cuaderno la deja en conapo/ si se ejecuta desde la raiz del repositorio.
+conapo/
+data/raw/conapo/
+**/IMC_2020/
+**/imc2020_shp/
+*.zip
+
+# Productos derivados del análisis
+Base_Robo_Vehiculos_Jalisco_con_Marginacion.xlsx
+data/processed/*_con_Marginacion.xlsx
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

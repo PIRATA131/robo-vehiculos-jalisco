@@ -1,0 +1,15 @@
+# Análisis
+pandas>=2.0
+numpy>=1.24
+openpyxl>=3.1          # lectura de .xlsx
+
+# Análisis espacial
+geopandas>=0.14
+shapely>=2.0
+pyogrio>=0.7           # lector rápido de shapefile
+
+# Visualización
+matplotlib>=3.7
+
+# Entorno
+jupyter>=1.0
