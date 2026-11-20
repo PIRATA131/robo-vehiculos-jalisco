@@ -65,8 +65,10 @@ def descargar(destino: pathlib.Path):
                 print("  Puedes bajarlo a mano desde:\n    %s" % url)
                 return False
 
+        # Se descomprime si la carpeta no existe O si existe pero esta vacia:
+        # una limpieza de temporales puede borrar los archivos y dejar el directorio.
         carpeta = destino / archivo.stem
-        if not carpeta.exists():
+        if not carpeta.exists() or not any(carpeta.iterdir()):
             with zipfile.ZipFile(archivo) as z:
                 z.extractall(carpeta)
             print("    descomprimido en %s/" % carpeta.name)

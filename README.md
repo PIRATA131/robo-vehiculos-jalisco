@@ -92,6 +92,12 @@ Si prefieres bajar la fuente de CONAPO por separado, sin abrir el cuaderno:
 python scripts/descargar_conapo.py
 ```
 
+Y para reproducir el modelo estadístico de H3 por separado:
+
+```bash
+python scripts/modelo_h3.py
+```
+
 ### Qué esperar
 
 Una corrida completa tarda entre tres y cinco minutos, casi todo en la descarga de CONAPO
@@ -114,7 +120,8 @@ encontrarás las cinco figuras en `figuras/` y el archivo
 │   │   └── Base_Robo_Vehiculos_Jalisco.xlsx                  IIEG, filtrada y limpia
 │   └── README.md                                             Procedencia de cada archivo
 ├── scripts/
-│   └── descargar_conapo.py                                   Descarga el índice de marginación
+│   ├── descargar_conapo.py                                   Descarga el índice de marginación
+│   └── modelo_h3.py                                          GLM quasi-Poisson que contrasta H3
 ├── figuras/                                                  Las cinco figuras del reporte
 ├── docs/
 │   ├── Reporte_Final.pdf                                     Reporte académico, 18 páginas
@@ -173,6 +180,27 @@ baja no son ni las más numerosas ni las más pobladas, de modo que comparar por
 favorecería mecánicamente a los grupos más poblados. Como control de robustez se repitió el
 cálculo con quintiles del índice continuo calculados *dentro* del AMG, para corregir el sesgo
 de usar los grados nacionales en una zona metropolitana: la razón entre extremos es 1.96.
+
+**Modelo.** Para no quedarse en la comparación de promedios, H3 se contrasta además con un
+**modelo lineal generalizado de Poisson con errores quasi-Poisson** (`scripts/modelo_h3.py`),
+la misma familia que el IIEG usó en su estudio de 2019. La unidad es la colonia, la respuesta
+es el conteo de robos y la población entra como *offset* logarítmico, de modo que el modelo
+estima tasas y no conteos. Los errores son quasi-Poisson porque hay sobredispersión marcada
+(varianza 100 contra media 5.3 robos por colonia).
+
+Sobre 1 823 colonias del AMG, tomando como referencia las de marginación muy baja:
+
+| Grado de marginación | IRR | IC 95 % | p |
+|---|---|---|---|
+| Bajo | 1.08 | 0.94 – 1.25 | 0.288 |
+| Medio | 0.64 | 0.54 – 0.74 | < 0.001 |
+| Alto | **0.52** | 0.42 – 0.64 | < 0.001 |
+| Muy alto | 0.52 | 0.24 – 1.17 | 0.113 |
+
+Las colonias de marginación alta registran **48 % menos robos por habitante** que las de
+marginación muy baja, y la prueba F del grado completo da p < 0.001. El modelo también
+reproduce los dos matices que ya mostraban las tasas crudas: «Bajo» no se distingue de «Muy
+bajo», y «Muy alto» no alcanza significancia porque sólo reúne 40 colonias.
 
 **Visualización.** Cada figura lleva título-conclusión siguiendo a Knaflic (2015): el título
 afirma el hallazgo en vez de describir los ejes, y una nota al pie declara la advertencia

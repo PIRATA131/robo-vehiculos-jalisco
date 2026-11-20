@@ -8,6 +8,10 @@ geopandas>=0.14
 shapely>=2.0
 pyogrio>=0.7           # lector rápido de shapefile
 
+# Modelado estadístico
+statsmodels>=0.14
+scipy>=1.10
+
 # Visualización
 matplotlib>=3.7
 
