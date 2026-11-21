@@ -124,8 +124,9 @@ encontrarás las cinco figuras en `figuras/` y el archivo
 │   └── modelo_h3.py                                          GLM quasi-Poisson que contrasta H3
 ├── figuras/                                                  Las cinco figuras del reporte
 ├── docs/
-│   ├── Reporte_Final.pdf                                     Reporte académico, 18 páginas
-│   └── Presentacion.pdf                                      Presentación, 12 diapositivas
+│   ├── Reporte_Final.pdf                                     Reporte académico, 20 páginas
+│   ├── Presentacion.pdf                                      Presentación, 12 diapositivas
+│   └── presentacion.html                                     Versión animada, un solo archivo
 └── requirements.txt
 ```
 
