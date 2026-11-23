@@ -117,7 +117,7 @@ encontrarás las cinco figuras en `figuras/` y el archivo
 │   └── descargar_conapo.py                                   Descarga el índice de marginación
 ├── figuras/                                                  Las cinco figuras del reporte
 ├── docs/
-│   ├── Reporte_Final.pdf                                     Reporte académico, 13 páginas
+│   ├── Reporte_Final.pdf                                     Reporte académico, 12 páginas
 │   ├── Presentacion.pdf                                      Presentación, 12 diapositivas
 │   └── presentacion.html                                     Versión animada, un solo archivo
 └── requirements.txt
