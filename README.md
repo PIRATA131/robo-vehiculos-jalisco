@@ -261,13 +261,3 @@ fuentes primarias. Se documentan aquí por transparencia:
 Especialidad en Ciencia de Datos, Universidad Panamericana campus Guadalajara
 Materia: Visualización de Datos y Narración de Historias
 Profesor: Dr. Rodolfo Rubén Álvarez González
-
-## Licencia
-
-El **código** de este repositorio se publica bajo licencia MIT (ver [`LICENSE`](LICENSE)).
-
-Los **datos** provienen de fuentes gubernamentales mexicanas de acceso público y conservan
-las condiciones de uso de sus instituciones de origen (IIEG Jalisco, SESNSP y CONAPO). Se
-redistribuyen aquí únicamente con fines académicos y de reproducibilidad, citando la fuente
-en cada caso. Si vas a reutilizarlos, acude a la fuente original: los enlaces están en
-[`data/README.md`](data/README.md).
